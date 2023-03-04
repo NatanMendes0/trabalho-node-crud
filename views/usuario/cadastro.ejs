@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <%- include('../head'); %>
+</head>
+
+<body>
+  <header><%- include('../menu'); %></header>
+  <!-- <div class="container">
+      <h2>Cadastro de Usuário</h2>
+      <form action="/cadastrar" method="POST">
+        <div class="form-group">
+          <label for="usr">Nome:</label>
+          <input type="text" class="form-control" name="nome" required />
+        </div>
+        <div class="form-group">
+          <label for="usr">Email:</label>
+          <input type="email" class="form-control" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="pwd">Senha:</label>
+          <input type="password" class="form-control" name="senha" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div> -->
+
+    <div class="modal modal-signin position-static d-block bg-secondary" tabindex="-1" role="dialog"
+    id="modalSignin">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4">
+          <h1 class="fw-bold mb-0 fs-2">Faça seu cadastro!</h1>
+        </div>
+
+        <div class="modal-body p-5 pt-0">
+          <form action="/cadastro" method="POST">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="Nome" name="nome" required>
+              <div class="invalid-feedback">
+                  <p>
+                      Campo obrigatório.<br>
+                  </p>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="Email" name="email" required>
+              <div class="invalid-feedback">
+                  <p>
+                      Campo obrigatório.<br>
+                  </p>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Senha"
+                name="senha" required>
+                <div class="invalid-feedback">
+                    <p>
+                        Campo obrigatório.<br>
+                    </p>
+                </div>
+            </div>
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Registrar-se</button>
+            <small class="text-muted">Ao clicar em registrar-se, você concorda com os termos de uso.</small>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><%- include('../footer'); %></footer>
+</body>
+
+</html>

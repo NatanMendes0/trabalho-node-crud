@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <%- include('../head'); %>
+</head>
+
+<body>
+    <header><%- include('../menu'); %></header>
+    <section class="text-center container">
+        <div class="row py-lg-2">
+            <div class="col-lg-8 col-md-8 mx-auto">
+                <h1 class="fw-light">Bem vindo(a) ao Marquinhos Games!</h1>
+                <p class="lead text-muted">
+                    Aqui você encontra os melhores jogos para jogar com seus amigos!
+                </p>
+                <p>
+                    <a href="/jogo/adiciona" class="btn btn-primary my-2">Adicionar um jogo</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-dark">
+        <div class="container">
+            <div class="row">
+                <% dadosjogo.forEach(function(dados) { %>
+                    <div class="col-sm-4 mt-5">
+                        <div class="card shadow-sm" style="width: 20rem;">
+                            <img src="imagens/<%=dados.imagem %>" class="mx-auto d-block" style="width: 100%" />
+                            <div class="card-body text-center">
+                                <h5 class="card-text">
+                                    <%= dados.nome %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= dados.descricao %>
+                                </p>
+                                <p class="card-text">
+                                    <%= dados.categoria %>
+                                </p>
+                                
+                                <h6 class="card-text">
+                                    R$ <%= dados.preco %>
+                                </h6>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="/jogo/edita/<%=dados.id %>"> <span class="material-icons ">create</span> </a>
+                                        <a href="/jogo/apaga/<%=dados.id %>"><span class="material-icons ">delete </span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../footer'); %>
+</body>
+
+</html>
